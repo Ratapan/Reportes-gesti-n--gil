@@ -35,7 +35,7 @@ Nombre_areticulo | Id_articulo | Procedencia | Cantidad | Dia | Mes | Año | Com
 + Agrupe owner y procedencia, posteriormente debe evidenciar la cantidad total asociada. Hoja Venta_Procedencia
 >Nota Importante: Deberá documentar el paso a paso de los puntos requeridos en esta actividad
 
-1. Por un requerimiento especial se requiere generar un nuevo reporte que muestre:
+3. 📃 Por un requerimiento especial se requiere generar un nuevo reporte que muestre:
 + Nombre de comuna y cantidad total de artículos vendidos.
 + Nombre del owner y cantidad de despachos realizados a cada comuna.
 >Es importante resaltar que una ventana emergente debe controlar si se lleva a cabo la acción de este reporte. Considere dentro del proceso la creación de un directorio en la raíz del disco C con el nombre de Reporte_Especial.
