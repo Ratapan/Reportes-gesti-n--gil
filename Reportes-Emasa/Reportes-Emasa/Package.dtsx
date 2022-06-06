@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/22/2022 7:03:39 PM"
@@ -11,9 +11,646 @@
   DTS:LocaleID="13322"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionGUID="{6A963192-6E92-4B64-92FC-E5134E3DA1F9}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{7F21C649-5B60-46DA-BC9C-C59416EDCAA0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel_scrum_data]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{95692A62-66EF-40CA-B06F-7A8D31EE6190}"
+      DTS:ObjectName="Excel_scrum_data">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Reportes-gestion-agil\Documentacion\Scrum_Datos.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\OwnersAutomatizacion"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A0C09744-6A66-43E3-9567-C27C3D4F790F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="OwnersAutomatizacion"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\OwnersAutomatizacion\MainExcel"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="MainExcel"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Ventas_Mar_May$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\OwnersAutomatizacion\MainExcel.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel_scrum_data]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel_scrum_data]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[id_articulo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[id_articulo]"
+                      length="255"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[id_articulo]"
+                      name="id_articulo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Procedencia]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Procedencia]"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Procedencia]"
+                      name="Procedencia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Cantidad]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Cantidad]"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Cantidad]"
+                      name="Cantidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Owner]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Owner]"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Owner]"
+                      name="Owner"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Dia]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Dia]"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Dia]"
+                      name="Dia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Mes]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Mes]"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Mes]"
+                      name="Mes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Año]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Año]"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Año]"
+                      name="Año"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Comuna Despacho]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Comuna Despacho]"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Comuna Despacho]"
+                      name="Comuna Despacho"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[id_articulo]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_articulo" />
+                    <externalMetadataColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Procedencia]"
+                      dataType="r8"
+                      name="Procedencia" />
+                    <externalMetadataColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Cantidad]"
+                      dataType="r8"
+                      name="Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Owner]"
+                      dataType="r8"
+                      name="Owner" />
+                    <externalMetadataColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Dia]"
+                      dataType="r8"
+                      name="Dia" />
+                    <externalMetadataColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Mes]"
+                      dataType="r8"
+                      name="Mes" />
+                    <externalMetadataColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Año]"
+                      dataType="r8"
+                      name="Año" />
+                    <externalMetadataColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].ExternalColumns[Comuna Despacho]"
+                      dataType="r8"
+                      name="Comuna Despacho" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[id_articulo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[id_articulo]"
+                      name="id_articulo" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Procedencia]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Procedencia]"
+                      name="Procedencia" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Cantidad]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Cantidad]"
+                      name="Cantidad" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Owner]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Owner]"
+                      name="Owner" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Dia]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Dia]"
+                      name="Dia" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Mes]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Mes]"
+                      name="Mes" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Año]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Año]"
+                      name="Año" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Comuna Despacho]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[Comuna Despacho]"
+                      name="Comuna Despacho" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\OwnersAutomatizacion\OwnerGroup"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="OwnerGroup"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\OwnersAutomatizacion\OwnerGroup.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\OwnersAutomatizacion\OwnerGroup.Inputs[Aggregate Input 1].Columns[id_articulo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_articulo"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[id_articulo]" />
+                    <inputColumn
+                      refId="Package\OwnersAutomatizacion\OwnerGroup.Inputs[Aggregate Input 1].Columns[Cantidad]"
+                      cachedDataType="r8"
+                      cachedName="Cantidad"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Cantidad]" />
+                    <inputColumn
+                      refId="Package\OwnersAutomatizacion\OwnerGroup.Inputs[Aggregate Input 1].Columns[Owner]"
+                      cachedDataType="r8"
+                      cachedName="Owner"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Owner]" />
+                    <inputColumn
+                      refId="Package\OwnersAutomatizacion\OwnerGroup.Inputs[Aggregate Input 1].Columns[Año]"
+                      cachedDataType="r8"
+                      cachedName="Año"
+                      lineageId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Año]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1].Columns[id_articulo]"
+                      dataType="ui8"
+                      lineageId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1].Columns[id_articulo]"
+                      name="id_articulo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[id_articulo]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1].Columns[Cantidad]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1].Columns[Cantidad]"
+                      name="Cantidad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1].Columns[Owner]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1].Columns[Owner]"
+                      name="Owner">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Owner]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1].Columns[Año]"
+                      dataType="r8"
+                      lineageId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1].Columns[Año]"
+                      name="Año">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output].Columns[Año]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\OwnersAutomatizacion\Script Component"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;12"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Script Component"
+              version="12">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_231862eb1d6d4447a006d56daccd4ca9</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE"></property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\OwnersAutomatizacion\Script Component.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\OwnersAutomatizacion\Script Component.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\OwnersAutomatizacion\Script Component.Inputs[Input 0]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\OwnersAutomatizacion.Paths[Aggregate Output 1]"
+              endId="Package\OwnersAutomatizacion\Script Component.Inputs[Input 0]"
+              name="Aggregate Output 1"
+              startId="Package\OwnersAutomatizacion\OwnerGroup.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\OwnersAutomatizacion.Paths[Excel Source Output]"
+              endId="Package\OwnersAutomatizacion\OwnerGroup.Inputs[Aggregate Input 1]"
+              name="Excel Source Output"
+              startId="Package\OwnersAutomatizacion\MainExcel.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,42"
+          Id="Package\OwnersAutomatizacion"
+          TopLeft="23,94" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\OwnersAutomatizacion">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\OwnersAutomatizacion\MainExcel"
+          TopLeft="161,100" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\OwnersAutomatizacion\OwnerGroup"
+          TopLeft="161,224" />
+        <EdgeLayout
+          Id="Package\OwnersAutomatizacion.Paths[Excel Source Output]"
+          TopLeft="229,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82"
+              Start="0,0"
+              End="0,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167,42"
+          Id="Package\OwnersAutomatizacion\Script Component"
+          TopLeft="148,302" />
+        <EdgeLayout
+          Id="Package\OwnersAutomatizacion.Paths[Aggregate Output 1]"
+          TopLeft="231.75,266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\OwnersAutomatizacion\MainExcel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
