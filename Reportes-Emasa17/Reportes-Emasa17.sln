@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1972
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Reportes-Emasa17", "Reportes-Emasa17\Reportes-Emasa17.dtproj", "{58B993BA-E3E3-48B6-ABDC-388A4C5AEC6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58B993BA-E3E3-48B6-ABDC-388A4C5AEC6A}.Development|Default.ActiveCfg = Development
+		{58B993BA-E3E3-48B6-ABDC-388A4C5AEC6A}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7ACCDD97-6863-43EA-BEF8-22EB11C133AD}
+	EndGlobalSection
+EndGlobal
