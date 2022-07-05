@@ -11,8 +11,8 @@
   DTS:LocaleID="13322"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{AA66BE3B-C3BE-49E4-866E-CA433399CBDD}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{B1130902-068F-4883-8A88-459A3717B8DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,13 +31,13 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{E7B892C6-39C7-4586-BE86-8172CC1B7577}"
+      DTS:DTSID="{5BE0F505-9E73-4E30-A4D3-4566D24E032F}"
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Informes_diarios\SpecialReports.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Reportes-gestion-agil\Reportes\send_report.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -74,18 +74,6 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[OwnerReport]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{490D9173-4E6B-4449-8204-7CDE0FE1C289}"
-      DTS:ObjectName="OwnerReport">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Reportes-gestion-agil\Reportes\send_report.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ReportMaMiAvg]"
       DTS:CreationName="EXCEL"
       DTS:DTSID="{7BCCAEFE-AAC9-4035-9DDA-EE1387D79BC4}"
@@ -119,6 +107,38 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Informes_diarios\Venta_Procedencia.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[send_report.xls]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{65BEE3CA-2304-4921-9724-4DDDF2162E75}"
+      DTS:ObjectName="send_report.xls">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Reportes-gestion-agil\Reportes\send_report.xls" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[send_report.xls 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7AC1BD58-4A9B-4713-931C-477170ED1D90}"
+      DTS:ObjectName="send_report.xls 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Reportes-gestion-agil\init-docs\send_report.xls" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SpecialReport]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{E7B892C6-39C7-4586-BE86-8172CC1B7577}"
+      DTS:ObjectName="SpecialReport">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Informes_diarios\SpecialReports.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -174,6 +194,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{70276023-76C0-4B96-8E3B-B9688C83087D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Reportes">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Reportes-gestion-agil\Reportes</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{C2EA4784-4D3C-4A1D-AEEF-CA2AD43C25B7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -183,6 +212,23 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CopySendReport"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{75068DA4-3C1E-434D-8020-15D7C1FF1B03}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CopySendReport"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskSourcePath="{7AC1BD58-4A9B-4713-931C-477170ED1D90}"
+          TaskDestinationPath="User::Reportes"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\CreateDirectory"
       DTS:CreationName="Microsoft.FileSystemTask"
@@ -1423,6 +1469,22 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\DeleterSendReport"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{AD2B5BA9-758A-4C74-9D8C-FB7CD192F05A}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DeleterSendReport"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{65BEE3CA-2304-4921-9724-4DDDF2162E75}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\FileSpecialReports"
       DTS:CreationName="Microsoft.FileSystemTask"
       DTS:Description="File System Task"
@@ -1818,8 +1880,8 @@
               <connections>
                 <connection
                   refId="Package\OwnersAutomatizacionReport\OwnerReport.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[OwnerReport]"
-                  connectionManagerRefId="Package.ConnectionManagers[OwnerReport]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1916,36 +1978,6 @@
           VSTAMajorVersion="15"
           VSTAMinorVersion="0"
           Language="CSharp">
-          <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4eb8ee8211574e8b8b645874f8d6c703")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4eb8ee8211574e8b8b645874f8d6c703")]
-[assembly: AssemblyCopyright("Copyright @  2022")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="ST_4eb8ee8211574e8b8b645874f8d6c703.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2152,6 +2184,35 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4eb8ee8211574e8b8b645874f8d6c703.Properties.Settings.get_Default():ST_4eb8ee8211574e8b8b645874f8d6c703.Properties.Sett" +
+    "ings")]
+
+namespace ST_4eb8ee8211574e8b8b645874f8d6c703.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -2323,34 +2384,35 @@ namespace ST_4eb8ee8211574e8b8b645874f8d6c703
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4eb8ee8211574e8b8b645874f8d6c703")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4eb8ee8211574e8b8b645874f8d6c703")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4eb8ee8211574e8b8b645874f8d6c703.Properties.Settings.get_Default():ST_4eb8ee8211574e8b8b645874f8d6c703.Properties.Sett" +
-    "ings")]
-
-namespace ST_4eb8ee8211574e8b8b645874f8d6c703.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Settings.settings"
             Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -3136,8 +3198,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               <connections>
                 <connection
                   refId="Package\SpecialReports\ExcelByCommune.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[SpecialReport]"
+                  connectionManagerRefId="Package.ConnectionManagers[SpecialReport]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3246,8 +3308,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               <connections>
                 <connection
                   refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[SpecialReport]"
+                  connectionManagerRefId="Package.ConnectionManagers[SpecialReport]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3282,15 +3344,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].ExternalColumns[Owner]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Owner" />
                     <externalMetadataColumn
                       refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].ExternalColumns[Comuna Despacho]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Comuna Despacho" />
                     <externalMetadataColumn
                       refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].ExternalColumns[Cantidad]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Cantidad" />
                   </externalMetadataColumns>
                 </input>
@@ -3408,6 +3473,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\FileVentas" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{60CBDF62-8AEF-45D6-B4E0-537D6C0612FA}"
+      DTS:From="Package\CopySendReport"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\OwnersAutomatizacionReport" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{CEF81A26-5496-4DD1-8DA7-E6361D711D72}"
@@ -3442,11 +3515,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{A5591FCA-A099-4519-8B9E-C6A7E4EE7C2D}"
-      DTS:From="Package\FileSpecialReports"
+      DTS:DTSID="{C6F70E52-8679-4BBD-992A-68A15596FC76}"
+      DTS:From="Package\DeleterSendReport"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
-      DTS:To="Package\OwnersAutomatizacionReport" />
+      DTS:To="Package\CopySendReport" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
@@ -3463,6 +3536,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\FileSpecialReports" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{7FE10784-55A2-498C-B1E7-DD69B70F6814}"
+      DTS:From="Package\FileSpecialReports"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\DeleterSendReport" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3483,11 +3564,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="217,42"
           Id="Package\CreateReportsinformesdiarios"
-          TopLeft="59.6666666666667,680.999999999998" />
+          TopLeft="53.6666666666667,342.999999999998" />
         <NodeLayout
           Size="188,42"
           Id="Package\DeleteDirectoryContent"
           TopLeft="77,119" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\FileSpecialReports"
+          TopLeft="285.222222222222,35.888888888889" />
         <NodeLayout
           Size="127,42"
           Id="Package\FileVentas"
@@ -3495,37 +3580,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="158,42"
           Id="Package\FileVentasOwner"
-          TopLeft="95,263" />
+          TopLeft="285,192" />
         <NodeLayout
           Size="183,42"
           Id="Package\FileVentasProcedencia"
-          TopLeft="79,333" />
+          TopLeft="278,121" />
         <NodeLayout
           Size="218,42"
           Id="Package\OwnersAutomatizacionReport"
-          TopLeft="57.6666666666667,522" />
+          TopLeft="479.666666666667,340" />
         <NodeLayout
           Size="121,42"
           Id="Package\SendMail"
-          TopLeft="102.666666666667,596.999999999999" />
+          TopLeft="313.666666666667,342.999999999999" />
         <NodeLayout
           Size="148,42"
           Id="Package\SpecialReports"
-          TopLeft="94.6666666666667,758.999999999998" />
+          TopLeft="88.6666666666667,420.999999999998" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="164.916666666667,564">
+          TopLeft="479.666666666667,362.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.9999999999991"
+              EndConnector="-44.9999999999998,0"
               Start="0,0"
-              End="0,25.4999999999991">
+              End="-37.4999999999998,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.4999999999991" />
+                    End="-37.4999999999998,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3558,18 +3643,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="165.666666666667,638.999999999998">
+          TopLeft="313.666666666667,363.999999999998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="-43.0000000000002,0"
               Start="0,0"
-              End="0,34.5">
+              End="-35.5000000000002,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="-35.5000000000002,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3602,18 +3687,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="170.75,234">
+          TopLeft="231,213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29"
+              EndConnector="54,0"
               Start="0,0"
-              End="0,21.5">
+              End="46.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="46.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3624,18 +3709,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="172.25,305">
+          TopLeft="366.75,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28"
+              EndConnector="0,-29"
               Start="0,0"
-              End="0,20.5">
+              End="0,-21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,-21.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3646,7 +3731,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="168.416666666667,722.999999999998">
+          TopLeft="162.416666666667,384.999999999998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3666,24 +3751,50 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\FileSpecialReports"
-          TopLeft="82.2222222222222,428.888888888889" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="165.444444444444,470.888888888889">
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="368.361111111111,121">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.111111111111"
+              EndConnector="0,-43.111111111111"
               Start="0,0"
-              End="0,43.611111111111">
+              End="0,-35.611111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.611111111111" />
+                    End="0,-35.611111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,42"
+          Id="Package\DeleterSendReport"
+          TopLeft="504.888888888889,32.6666666666667" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CopySendReport"
+          TopLeft="509.777777777778,119" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="449.222222222222,55.2777777777778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.6666666666667,0"
+              Start="0,0"
+              End="48.1666666666667,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.1666666666667,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3693,19 +3804,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="167.361111111111,375">
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="588.583333333333,74.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.8888888888889"
+              EndConnector="0,44.3333333333333"
               Start="0,0"
-              End="0,46.3888888888889">
+              End="0,36.8333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.3888888888889" />
+                    End="0,36.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="588.472222222222,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,179"
+              Start="0,0"
+              End="0,171.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,171.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4005,7 +4138,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package\OwnersAutomatizacionReport">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="144,42"
           Id="Package\OwnersAutomatizacionReport\AllDataVentas"
@@ -4037,9 +4170,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4061,9 +4192,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4101,13 +4230,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="117,42"
-          Id="Package\SpecialReports\AllDatas"
-          TopLeft="210,56" />
+          Size="201,42"
+          Id="Package\SpecialReports\ExcelByOwnwerCommDeli"
+          TopLeft="293,401" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\SpecialReports\ByOwnwerCommDeli"
+          TopLeft="309,226" />
         <NodeLayout
           Size="120,42"
           Id="Package\SpecialReports\Multicast"
           TopLeft="209,124" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\SpecialReports\ByCommune"
+          TopLeft="100,226" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\SpecialReports\ExcelByCommune"
+          TopLeft="87,399" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\SpecialReports\AllDatas"
+          TopLeft="210,56" />
         <EdgeLayout
           Id="Package\SpecialReports.Paths[Excel Source Output]"
           TopLeft="268.75,98">
@@ -4130,40 +4275,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="138,42"
-          Id="Package\SpecialReports\ByCommune"
-          TopLeft="100,226" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\SpecialReports\ByOwnwerCommDeli"
-          TopLeft="309,226" />
         <EdgeLayout
-          Id="Package\SpecialReports.Paths[Multicast Output 1]"
-          TopLeft="250.333333333333,166">
+          Id="Package\SpecialReports.Paths[Aggregate Output 11]"
+          TopLeft="395.5,268">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-81.3333333333333,60"
+              EndConnector="0,133"
               Start="0,0"
-              End="-81.3333333333333,52.5">
+              End="0,125.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4736842105263" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4736842105263"
-                    Point2="0,24.4736842105263"
-                    Point3="-4,24.4736842105263" />
+                    End="0,125.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SpecialReports.Paths[Aggregate Output 1]"
+          TopLeft="168.5,268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,131"
+              Start="0,0"
+              End="0,123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-77.3333333333333,24.4736842105263" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-77.3333333333333,24.4736842105263"
-                    Point2="-81.3333333333333,24.4736842105263"
-                    Point3="-81.3333333333333,28.4736842105263" />
-                  <mssgle:LineSegment
-                    End="-81.3333333333333,52.5" />
+                    End="0,123.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4206,50 +4353,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162,42"
-          Id="Package\SpecialReports\ExcelByCommune"
-          TopLeft="87,399" />
         <EdgeLayout
-          Id="Package\SpecialReports.Paths[Aggregate Output 1]"
-          TopLeft="168.5,268">
+          Id="Package\SpecialReports.Paths[Multicast Output 1]"
+          TopLeft="250.333333333333,166">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,131"
+              EndConnector="-81.3333333333333,60"
               Start="0,0"
-              End="0,123.5">
+              End="-81.3333333333333,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,123.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="201,42"
-          Id="Package\SpecialReports\ExcelByOwnwerCommDeli"
-          TopLeft="293,401" />
-        <EdgeLayout
-          Id="Package\SpecialReports.Paths[Aggregate Output 11]"
-          TopLeft="395.5,268">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,133"
-              Start="0,0"
-              End="0,125.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,20.4736842105263" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4736842105263"
+                    Point2="0,24.4736842105263"
+                    Point3="-4,24.4736842105263" />
                   <mssgle:LineSegment
-                    End="0,125.5" />
+                    End="-77.3333333333333,24.4736842105263" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-77.3333333333333,24.4736842105263"
+                    Point2="-81.3333333333333,24.4736842105263"
+                    Point3="-81.3333333333333,28.4736842105263" />
+                  <mssgle:LineSegment
+                    End="-81.3333333333333,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4262,7 +4391,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SpecialReports\AllDatas">
+    design-time-name="Package\SpecialReports\ExcelByOwnwerCommDeli">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4288,7 +4417,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SpecialReports\ExcelByOwnwerCommDeli">
+    design-time-name="Package\SpecialReports\AllDatas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
