@@ -11,8 +11,8 @@
   DTS:LocaleID="13322"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{B1130902-068F-4883-8A88-459A3717B8DA}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{BFD4DF85-23CE-466D-BD9A-69BCC13151B5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,6 +29,98 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AllDataVentasCsv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{71E09D86-F201-4579-9806-BC928A7148DA}"
+      DTS:ObjectName="AllDataVentasCsv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="13322"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Reportes-gestion-agil\Documentacion\Scrum_Datos.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_articulo"
+              DTS:DTSID="{18796690-9862-4E75-87AB-46030677A871}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Procedencia"
+              DTS:DTSID="{21E8AF00-27D9-4355-B852-14FC17F33E2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cantidad"
+              DTS:DTSID="{D1D69D8D-B4BB-4970-94B4-988516100BA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Owner"
+              DTS:DTSID="{A34A941A-FEDB-4B49-B5AC-330F33E5DEDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dia"
+              DTS:DTSID="{D9E81102-4F65-416D-A2FE-97C5C57D0FB4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mes"
+              DTS:DTSID="{D1F8DAAE-DE1F-4461-883B-C360959119C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Año"
+              DTS:DTSID="{11FC015F-A600-4FD7-9C92-6DE1AE233B7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Comuna Despacho"
+              DTS:DTSID="{45CF957B-E62E-4C4D-90DF-713B291D8387}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
       DTS:DTSID="{5BE0F505-9E73-4E30-A4D3-4566D24E032F}"
@@ -37,7 +129,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Reportes-gestion-agil\Reportes\send_report.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Reportes-gestion-agil\Reportes\send_report.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -263,6 +355,292 @@
           version="1">
           <components>
             <component
+              refId="Package\CreateReportsinformesdiarios\DataConversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DataConversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CreateReportsinformesdiarios\DataConversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Inputs[Data Conversion Input].Columns[Owner]"
+                      cachedDataType="r8"
+                      cachedName="Owner"
+                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Owner]" />
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Inputs[Data Conversion Input].Columns[Procedencia]"
+                      cachedDataType="r8"
+                      cachedName="Procedencia"
+                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Procedencia]" />
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Inputs[Data Conversion Input].Columns[Mes]"
+                      cachedDataType="r8"
+                      cachedName="Mes"
+                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Mes]" />
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Inputs[Data Conversion Input].Columns[Cantidad]"
+                      cachedDataType="r8"
+                      cachedName="Cantidad"
+                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\CreateReportsinformesdiarios\DataConversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FOwner]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FOwner]"
+                      name="FOwner"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Owner]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FProcedencia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FProcedencia]"
+                      name="FProcedencia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Procedencia]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FMes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FMes]"
+                      name="FMes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Mes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FCantidad]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FCantidad]"
+                      name="FCantidad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\CreateReportsinformesdiarios\DataConversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CreateReportsinformesdiarios\DataConversionToExcel"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DataConversionToExcel"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Inputs[Data Conversion Input].Columns[Procedencia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Procedencia"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Procedencia]" />
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Inputs[Data Conversion Input].Columns[Cantidad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cantidad"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Cantidad]" />
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Inputs[Data Conversion Input].Columns[Owner]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Owner"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Owner]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FProcedencia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FProcedencia]"
+                      name="FProcedencia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Procedencia]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]"
+                      name="FCantidad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Cantidad]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FOwner]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FOwner]"
+                      name="FOwner"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Owner]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\CreateReportsinformesdiarios\group"
               componentClassID="Microsoft.Aggregate"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
@@ -299,20 +677,22 @@
                   name="Aggregate Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\group.Inputs[Aggregate Input 1].Columns[Owner]"
-                      cachedDataType="r8"
-                      cachedName="Owner"
-                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Owner]" />
+                      refId="Package\CreateReportsinformesdiarios\group.Inputs[Aggregate Input 1].Columns[FOwner]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FOwner"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FOwner]" />
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\group.Inputs[Aggregate Input 1].Columns[Mes]"
-                      cachedDataType="r8"
-                      cachedName="Mes"
-                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Mes]" />
+                      refId="Package\CreateReportsinformesdiarios\group.Inputs[Aggregate Input 1].Columns[FMes]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FMes"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FMes]" />
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\group.Inputs[Aggregate Input 1].Columns[Cantidad]"
+                      refId="Package\CreateReportsinformesdiarios\group.Inputs[Aggregate Input 1].Columns[FCantidad]"
                       cachedDataType="r8"
-                      cachedName="Cantidad"
-                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]" />
+                      cachedName="FCantidad"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FCantidad]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -335,7 +715,8 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Owner]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Owner]"
                       name="Owner">
                       <properties>
@@ -343,7 +724,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Owner]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FOwner]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -361,7 +742,8 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Mes]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Mes]"
                       name="Mes">
                       <properties>
@@ -369,7 +751,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Mes]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FMes]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -395,7 +777,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FCantidad]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -453,15 +835,16 @@
                   name="Aggregate Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\max-min-avg.Inputs[Aggregate Input 1].Columns[Owner]"
-                      cachedDataType="r8"
-                      cachedName="Owner"
-                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Owner]" />
+                      refId="Package\CreateReportsinformesdiarios\max-min-avg.Inputs[Aggregate Input 1].Columns[FOwner]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FOwner"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FOwner]" />
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\max-min-avg.Inputs[Aggregate Input 1].Columns[Cantidad]"
+                      refId="Package\CreateReportsinformesdiarios\max-min-avg.Inputs[Aggregate Input 1].Columns[FCantidad]"
                       cachedDataType="r8"
-                      cachedName="Cantidad"
-                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]" />
+                      cachedName="FCantidad"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FCantidad]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -484,7 +867,8 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\CreateReportsinformesdiarios\max-min-avg.Outputs[Aggregate Output 1].Columns[Owner]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\CreateReportsinformesdiarios\max-min-avg.Outputs[Aggregate Output 1].Columns[Owner]"
                       name="Owner">
                       <properties>
@@ -492,7 +876,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Owner]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FOwner]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -518,7 +902,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FCantidad]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -544,7 +928,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FCantidad]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -570,7 +954,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output].Columns[FCantidad]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -616,13 +1000,6 @@
                   refId="Package\CreateReportsinformesdiarios\Multicast.Outputs[Multicast Output 2]"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 2"
-                  synchronousInputId="Package\CreateReportsinformesdiarios\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\CreateReportsinformesdiarios\Multicast.Outputs[Multicast Output 3]"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 3"
                   synchronousInputId="Package\CreateReportsinformesdiarios\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
@@ -900,20 +1277,22 @@
                   name="Aggregate Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\ventas.Inputs[Aggregate Input 1].Columns[Owner]"
-                      cachedDataType="r8"
-                      cachedName="Owner"
-                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Owner]" />
+                      refId="Package\CreateReportsinformesdiarios\ventas.Inputs[Aggregate Input 1].Columns[FOwner]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FOwner"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FOwner]" />
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\ventas.Inputs[Aggregate Input 1].Columns[Procedencia]"
-                      cachedDataType="r8"
-                      cachedName="Procedencia"
-                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Procedencia]" />
+                      refId="Package\CreateReportsinformesdiarios\ventas.Inputs[Aggregate Input 1].Columns[FProcedencia]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FProcedencia"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FProcedencia]" />
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\ventas.Inputs[Aggregate Input 1].Columns[Cantidad]"
+                      refId="Package\CreateReportsinformesdiarios\ventas.Inputs[Aggregate Input 1].Columns[FCantidad]"
                       cachedDataType="r8"
-                      cachedName="Cantidad"
-                      lineageId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]" />
+                      cachedName="FCantidad"
+                      lineageId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -936,7 +1315,8 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\CreateReportsinformesdiarios\ventas.Outputs[Aggregate Output 1].Columns[Owner]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\CreateReportsinformesdiarios\ventas.Outputs[Aggregate Output 1].Columns[Owner]"
                       name="Owner">
                       <properties>
@@ -944,7 +1324,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Owner]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FOwner]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -962,7 +1342,8 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\CreateReportsinformesdiarios\ventas.Outputs[Aggregate Output 1].Columns[Procedencia]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\CreateReportsinformesdiarios\ventas.Outputs[Aggregate Output 1].Columns[Procedencia]"
                       name="Procedencia">
                       <properties>
@@ -970,7 +1351,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Procedencia]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FProcedencia]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -996,7 +1377,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                          name="AggregationColumnId">#{Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -1012,6 +1393,185 @@
                           name="AggregationComparisonFlags">0</property>
                       </properties>
                     </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CreateReportsinformesdiarios\VentasCsv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="13322"
+              name="VentasCsv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CreateReportsinformesdiarios\VentasCsv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AllDataVentasCsv]"
+                  connectionManagerRefId="Package.ConnectionManagers[AllDataVentasCsv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Procedencia]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Procedencia]"
+                      length="50"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Procedencia]"
+                      name="Procedencia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Cantidad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Cantidad]"
+                      length="50"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Cantidad]"
+                      name="Cantidad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Owner]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Owner]"
+                      length="50"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].Columns[Owner]"
+                      name="Owner"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[id_articulo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_articulo" />
+                    <externalMetadataColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Procedencia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Procedencia" />
+                    <externalMetadataColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Cantidad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Owner]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Owner" />
+                    <externalMetadataColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Dia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Dia" />
+                    <externalMetadataColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Mes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Mes" />
+                    <externalMetadataColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Año]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Año" />
+                    <externalMetadataColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Comuna Despacho]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Comuna Despacho" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1082,7 +1642,8 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\CreateReportsinformesdiarios\ventas_m.Inputs[Excel Destination Input].Columns[Owner]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="Owner"
                       externalMetadataColumnId="Package\CreateReportsinformesdiarios\ventas_m.Inputs[Excel Destination Input].ExternalColumns[Owner]"
                       lineageId="Package\CreateReportsinformesdiarios\max-min-avg.Outputs[Aggregate Output 1].Columns[Owner]" />
@@ -1219,23 +1780,25 @@
                   name="Excel Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].Columns[Owner]"
-                      cachedDataType="r8"
-                      cachedName="Owner"
-                      externalMetadataColumnId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].ExternalColumns[Owner]"
-                      lineageId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Owner]" />
-                    <inputColumn
-                      refId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].Columns[Mes]"
-                      cachedDataType="r8"
-                      cachedName="Mes"
-                      externalMetadataColumnId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].ExternalColumns[Mes]"
-                      lineageId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Mes]" />
-                    <inputColumn
                       refId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].Columns[Cantidad]"
                       cachedDataType="r8"
                       cachedName="Cantidad"
                       externalMetadataColumnId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].ExternalColumns[Cantidad]"
                       lineageId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Cantidad]" />
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].Columns[Owner]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Owner"
+                      externalMetadataColumnId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].ExternalColumns[Owner]"
+                      lineageId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Owner]" />
+                    <inputColumn
+                      refId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].Columns[Mes]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Mes"
+                      externalMetadataColumnId="Package\CreateReportsinformesdiarios\ventas_owner.Inputs[Excel Destination Input].ExternalColumns[Mes]"
+                      lineageId="Package\CreateReportsinformesdiarios\group.Outputs[Aggregate Output 1].Columns[Mes]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1347,13 +1910,15 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\CreateReportsinformesdiarios\ventas_procedencia.Inputs[Excel Destination Input].Columns[Owner]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="Owner"
                       externalMetadataColumnId="Package\CreateReportsinformesdiarios\ventas_procedencia.Inputs[Excel Destination Input].ExternalColumns[Owner]"
                       lineageId="Package\CreateReportsinformesdiarios\ventas.Outputs[Aggregate Output 1].Columns[Owner]" />
                     <inputColumn
                       refId="Package\CreateReportsinformesdiarios\ventas_procedencia.Inputs[Excel Destination Input].Columns[Procedencia]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="Procedencia"
                       externalMetadataColumnId="Package\CreateReportsinformesdiarios\ventas_procedencia.Inputs[Excel Destination Input].ExternalColumns[Procedencia]"
                       lineageId="Package\CreateReportsinformesdiarios\ventas.Outputs[Aggregate Output 1].Columns[Procedencia]" />
@@ -1427,10 +1992,25 @@
               name="Aggregate Output 1"
               startId="Package\CreateReportsinformesdiarios\ventas.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\CreateReportsinformesdiarios.Paths[Excel Source Output]"
+              refId="Package\CreateReportsinformesdiarios.Paths[Data Conversion Output]"
               endId="Package\CreateReportsinformesdiarios\Multicast.Inputs[Multicast Input 1]"
+              name="Data Conversion Output"
+              startId="Package\CreateReportsinformesdiarios\DataConversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\CreateReportsinformesdiarios.Paths[Data Conversion Output1]"
+              endId="Package\CreateReportsinformesdiarios\ventas.Inputs[Aggregate Input 1]"
+              name="Data Conversion Output"
+              startId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\CreateReportsinformesdiarios.Paths[Excel Source Output]"
+              endId="Package\CreateReportsinformesdiarios\DataConversion.Inputs[Data Conversion Input]"
               name="Excel Source Output"
               startId="Package\CreateReportsinformesdiarios\Ventas.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\CreateReportsinformesdiarios.Paths[Flat File Source Output]"
+              endId="Package\CreateReportsinformesdiarios\DataConversionToExcel.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\CreateReportsinformesdiarios\VentasCsv.Outputs[Flat File Source Output]" />
             <path
               refId="Package\CreateReportsinformesdiarios.Paths[Multicast Output 1]"
               endId="Package\CreateReportsinformesdiarios\max-min-avg.Inputs[Aggregate Input 1]"
@@ -1441,11 +2021,6 @@
               endId="Package\CreateReportsinformesdiarios\group.Inputs[Aggregate Input 1]"
               name="Multicast Output 2"
               startId="Package\CreateReportsinformesdiarios\Multicast.Outputs[Multicast Output 2]" />
-            <path
-              refId="Package\CreateReportsinformesdiarios.Paths[Multicast Output 3]"
-              endId="Package\CreateReportsinformesdiarios\ventas.Inputs[Aggregate Input 1]"
-              name="Multicast Output 3"
-              startId="Package\CreateReportsinformesdiarios\Multicast.Outputs[Multicast Output 3]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1979,36 +2554,6 @@
           VSTAMinorVersion="0"
           Language="CSharp">
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4eb8ee8211574e8b8b645874f8d6c703")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4eb8ee8211574e8b8b645874f8d6c703")]
-[assembly: AssemblyCopyright("Copyright @  2022")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
             Name="ST_4eb8ee8211574e8b8b645874f8d6c703.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -2214,6 +2759,35 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4eb8ee8211574e8b8b645874f8d6c703.Properties.Settings.get_Default():ST_4eb8ee8211574e8b8b645874f8d6c703.Properties.Sett" +
+    "ings")]
+
+namespace ST_4eb8ee8211574e8b8b645874f8d6c703.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -2385,34 +2959,35 @@ namespace ST_4eb8ee8211574e8b8b645874f8d6c703
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4eb8ee8211574e8b8b645874f8d6c703")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4eb8ee8211574e8b8b645874f8d6c703")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4eb8ee8211574e8b8b645874f8d6c703.Properties.Settings.get_Default():ST_4eb8ee8211574e8b8b645874f8d6c703.Properties.Sett" +
-    "ings")]
-
-namespace ST_4eb8ee8211574e8b8b645874f8d6c703.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Settings.settings"
             Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -2645,233 +3220,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           version="1">
           <components>
             <component
-              refId="Package\SpecialReports\AllDatas"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="AllDatas"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Ventas_Mar_May$</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\SpecialReports\AllDatas.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[AllDataVentas]"
-                  connectionManagerRefId="Package.ConnectionManagers[AllDataVentas]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[id_articulo]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[id_articulo]"
-                      length="255"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[id_articulo]"
-                      name="id_articulo"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Procedencia]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Procedencia]"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Procedencia]"
-                      name="Procedencia"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Cantidad]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Cantidad]"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Cantidad]"
-                      name="Cantidad"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Owner]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Owner]"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Owner]"
-                      name="Owner"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Dia]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Dia]"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Dia]"
-                      name="Dia"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Mes]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Mes]"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Mes]"
-                      name="Mes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Año]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Año]"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Año]"
-                      name="Año"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Comuna Despacho]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Comuna Despacho]"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Comuna Despacho]"
-                      name="Comuna Despacho"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[id_articulo]"
-                      dataType="wstr"
-                      length="255"
-                      name="id_articulo" />
-                    <externalMetadataColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Procedencia]"
-                      dataType="r8"
-                      name="Procedencia" />
-                    <externalMetadataColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Cantidad]"
-                      dataType="r8"
-                      name="Cantidad" />
-                    <externalMetadataColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Owner]"
-                      dataType="r8"
-                      name="Owner" />
-                    <externalMetadataColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Dia]"
-                      dataType="r8"
-                      name="Dia" />
-                    <externalMetadataColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Mes]"
-                      dataType="r8"
-                      name="Mes" />
-                    <externalMetadataColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Año]"
-                      dataType="r8"
-                      name="Año" />
-                    <externalMetadataColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].ExternalColumns[Comuna Despacho]"
-                      dataType="r8"
-                      name="Comuna Despacho" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[id_articulo]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[id_articulo]"
-                      name="id_articulo" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Procedencia]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Procedencia]"
-                      name="Procedencia" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Cantidad]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Cantidad]"
-                      name="Cantidad" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Owner]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Owner]"
-                      name="Owner" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Dia]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Dia]"
-                      name="Dia" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Mes]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Mes]"
-                      name="Mes" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Año]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Año]"
-                      name="Año" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Comuna Despacho]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[Comuna Despacho]"
-                      name="Comuna Despacho" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\SpecialReports\ByCommune"
               componentClassID="Microsoft.Aggregate"
               contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
@@ -2908,15 +3256,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   name="Aggregate Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\SpecialReports\ByCommune.Inputs[Aggregate Input 1].Columns[Comuna Despacho]"
-                      cachedDataType="r8"
-                      cachedName="Comuna Despacho"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Comuna Despacho]" />
+                      refId="Package\SpecialReports\ByCommune.Inputs[Aggregate Input 1].Columns[FComuna Despacho]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FComuna Despacho"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FComuna Despacho]" />
                     <inputColumn
-                      refId="Package\SpecialReports\ByCommune.Inputs[Aggregate Input 1].Columns[Cantidad]"
+                      refId="Package\SpecialReports\ByCommune.Inputs[Aggregate Input 1].Columns[FCantidad]"
                       cachedDataType="r8"
-                      cachedName="Cantidad"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Cantidad]" />
+                      cachedName="FCantidad"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2938,16 +3287,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   </properties>
                   <outputColumns>
                     <outputColumn
-                      refId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[Comuna Despacho]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[Comuna Despacho]"
-                      name="Comuna Despacho">
+                      refId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[FComuna Despacho]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[FComuna Despacho]"
+                      name="FComuna Despacho">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Comuna Despacho]}</property>
+                          name="AggregationColumnId">#{Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FComuna Despacho]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -2964,16 +3314,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[Cantidad]"
+                      refId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[FCantidad]"
                       dataType="r8"
-                      lineageId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[Cantidad]"
-                      name="Cantidad">
+                      lineageId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[FCantidad]"
+                      name="FCantidad">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                          name="AggregationColumnId">#{Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -3031,20 +3381,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   name="Aggregate Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\SpecialReports\ByOwnwerCommDeli.Inputs[Aggregate Input 1].Columns[Owner]"
-                      cachedDataType="r8"
-                      cachedName="Owner"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Owner]" />
+                      refId="Package\SpecialReports\ByOwnwerCommDeli.Inputs[Aggregate Input 1].Columns[FOwner]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FOwner"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FOwner]" />
                     <inputColumn
-                      refId="Package\SpecialReports\ByOwnwerCommDeli.Inputs[Aggregate Input 1].Columns[Comuna Despacho]"
-                      cachedDataType="r8"
-                      cachedName="Comuna Despacho"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Comuna Despacho]" />
+                      refId="Package\SpecialReports\ByOwnwerCommDeli.Inputs[Aggregate Input 1].Columns[FComuna Despacho]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FComuna Despacho"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FComuna Despacho]" />
                     <inputColumn
-                      refId="Package\SpecialReports\ByOwnwerCommDeli.Inputs[Aggregate Input 1].Columns[Cantidad]"
+                      refId="Package\SpecialReports\ByOwnwerCommDeli.Inputs[Aggregate Input 1].Columns[FCantidad]"
                       cachedDataType="r8"
-                      cachedName="Cantidad"
-                      lineageId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Cantidad]" />
+                      cachedName="FCantidad"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3066,16 +3418,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   </properties>
                   <outputColumns>
                     <outputColumn
-                      refId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Owner]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Owner]"
-                      name="Owner">
+                      refId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FOwner]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FOwner]"
+                      name="FOwner">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Owner]}</property>
+                          name="AggregationColumnId">#{Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FOwner]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -3092,16 +3445,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Comuna Despacho]"
-                      dataType="r8"
-                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Comuna Despacho]"
-                      name="Comuna Despacho">
+                      refId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FComuna Despacho]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FComuna Despacho]"
+                      name="FComuna Despacho">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Comuna Despacho]}</property>
+                          name="AggregationColumnId">#{Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FComuna Despacho]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -3118,16 +3472,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Cantidad]"
+                      refId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FCantidad]"
                       dataType="r8"
-                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Cantidad]"
-                      name="Cantidad">
+                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FCantidad]"
+                      name="FCantidad">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the ID of the input column used in the aggregation."
-                          name="AggregationColumnId">#{Package\SpecialReports\AllDatas.Outputs[Excel Source Output].Columns[Cantidad]}</property>
+                          name="AggregationColumnId">#{Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]}</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of aggregation."
@@ -3143,6 +3497,139 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           name="AggregationComparisonFlags">0</property>
                       </properties>
                     </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SpecialReports\DataConversionToExcel"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DataConversionToExcel"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SpecialReports\DataConversionToExcel.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SpecialReports\DataConversionToExcel.Inputs[Data Conversion Input].Columns[Cantidad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cantidad"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Cantidad]" />
+                    <inputColumn
+                      refId="Package\SpecialReports\DataConversionToExcel.Inputs[Data Conversion Input].Columns[Owner]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Owner"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Owner]" />
+                    <inputColumn
+                      refId="Package\SpecialReports\DataConversionToExcel.Inputs[Data Conversion Input].Columns[Comuna Despacho]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Comuna Despacho"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Comuna Despacho]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\SpecialReports\DataConversionToExcel.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FComuna Despacho]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FComuna Despacho]"
+                      name="FComuna Despacho"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Comuna Despacho]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FCantidad]"
+                      name="FCantidad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Cantidad]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FOwner]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output].Columns[FOwner]"
+                      name="FOwner"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Owner]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\SpecialReports\DataConversionToExcel.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3212,11 +3699,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   name="Excel Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\SpecialReports\ExcelByCommune.Inputs[Excel Destination Input].Columns[Cantidad]"
+                      refId="Package\SpecialReports\ExcelByCommune.Inputs[Excel Destination Input].Columns[FComuna Despacho]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FComuna Despacho"
+                      externalMetadataColumnId="Package\SpecialReports\ExcelByCommune.Inputs[Excel Destination Input].ExternalColumns[Comuna_Despacho]"
+                      lineageId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[FComuna Despacho]" />
+                    <inputColumn
+                      refId="Package\SpecialReports\ExcelByCommune.Inputs[Excel Destination Input].Columns[FCantidad]"
                       cachedDataType="r8"
-                      cachedName="Cantidad"
+                      cachedName="FCantidad"
                       externalMetadataColumnId="Package\SpecialReports\ExcelByCommune.Inputs[Excel Destination Input].ExternalColumns[Cantidad]"
-                      lineageId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[Cantidad]" />
+                      lineageId="Package\SpecialReports\ByCommune.Outputs[Aggregate Output 1].Columns[FCantidad]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3322,23 +3816,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   name="Excel Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].Columns[Owner]"
-                      cachedDataType="r8"
-                      cachedName="Owner"
+                      refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].Columns[FOwner]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FOwner"
                       externalMetadataColumnId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].ExternalColumns[Owner]"
-                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Owner]" />
+                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FOwner]" />
                     <inputColumn
-                      refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].Columns[Comuna Despacho]"
-                      cachedDataType="r8"
-                      cachedName="Comuna Despacho"
+                      refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].Columns[FComuna Despacho]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FComuna Despacho"
                       externalMetadataColumnId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].ExternalColumns[Comuna Despacho]"
-                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Comuna Despacho]" />
+                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FComuna Despacho]" />
                     <inputColumn
-                      refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].Columns[Cantidad]"
+                      refId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].Columns[FCantidad]"
                       cachedDataType="r8"
-                      cachedName="Cantidad"
+                      cachedName="FCantidad"
                       externalMetadataColumnId="Package\SpecialReports\ExcelByOwnwerCommDeli.Inputs[Excel Destination Input].ExternalColumns[Cantidad]"
-                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[Cantidad]" />
+                      lineageId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1].Columns[FCantidad]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3423,6 +3919,185 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\SpecialReports\VentasCsv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="13322"
+              name="VentasCsv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SpecialReports\VentasCsv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AllDataVentasCsv]"
+                  connectionManagerRefId="Package.ConnectionManagers[AllDataVentasCsv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Cantidad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Cantidad]"
+                      length="50"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Cantidad]"
+                      name="Cantidad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Owner]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Owner]"
+                      length="50"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Owner]"
+                      name="Owner"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Comuna Despacho]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Comuna Despacho]"
+                      length="50"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].Columns[Comuna Despacho]"
+                      name="Comuna Despacho"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[id_articulo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_articulo" />
+                    <externalMetadataColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Procedencia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Procedencia" />
+                    <externalMetadataColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Cantidad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Owner]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Owner" />
+                    <externalMetadataColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Dia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Dia" />
+                    <externalMetadataColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Mes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Mes" />
+                    <externalMetadataColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Año]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Año" />
+                    <externalMetadataColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output].ExternalColumns[Comuna Despacho]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Comuna Despacho" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -3436,10 +4111,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               name="Aggregate Output 1"
               startId="Package\SpecialReports\ByOwnwerCommDeli.Outputs[Aggregate Output 1]" />
             <path
-              refId="Package\SpecialReports.Paths[Excel Source Output]"
+              refId="Package\SpecialReports.Paths[Data Conversion Output]"
               endId="Package\SpecialReports\Multicast.Inputs[Multicast Input 1]"
-              name="Excel Source Output"
-              startId="Package\SpecialReports\AllDatas.Outputs[Excel Source Output]" />
+              name="Data Conversion Output"
+              startId="Package\SpecialReports\DataConversionToExcel.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\SpecialReports.Paths[Flat File Source Output]"
+              endId="Package\SpecialReports\DataConversionToExcel.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\SpecialReports\VentasCsv.Outputs[Flat File Source Output]" />
             <path
               refId="Package\SpecialReports.Paths[Multicast Output 1]"
               endId="Package\SpecialReports\ByCommune.Inputs[Aggregate Input 1]"
@@ -3558,6 +4238,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="157,42"
+          Id="Package\CopySendReport"
+          TopLeft="509.777777777778,119" />
+        <NodeLayout
           Size="152,42"
           Id="Package\CreateDirectory"
           TopLeft="95,34" />
@@ -3569,6 +4253,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Size="188,42"
           Id="Package\DeleteDirectoryContent"
           TopLeft="77,119" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\DeleterSendReport"
+          TopLeft="504.888888888889,32.6666666666667" />
         <NodeLayout
           Size="164,42"
           Id="Package\FileSpecialReports"
@@ -3633,6 +4321,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="588.472222222222,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,179"
+              Start="0,0"
+              End="0,171.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,171.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3730,6 +4440,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="588.583333333333,74.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.3333333333333"
+              Start="0,0"
+              End="0,36.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="162.416666666667,384.999999999998">
           <EdgeLayout.Curve>
@@ -3773,14 +4505,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\DeleterSendReport"
-          TopLeft="504.888888888889,32.6666666666667" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\CopySendReport"
-          TopLeft="509.777777777778,119" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="449.222222222222,55.2777777777778">
@@ -3803,50 +4527,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="588.583333333333,74.6666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.3333333333333"
-              Start="0,0"
-              End="0,36.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="588.472222222222,161">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,179"
-              Start="0,0"
-              End="0,171.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,171.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3854,174 +4534,110 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package\CreateReportsinformesdiarios">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="145,42"
           Id="Package\CreateReportsinformesdiarios\ventas_owner"
-          TopLeft="224,343" />
+          TopLeft="280,345" />
         <NodeLayout
           Size="125,42"
           Id="Package\CreateReportsinformesdiarios\ventas_m"
-          TopLeft="78,344" />
+          TopLeft="134,346" />
         <NodeLayout
           Size="141,42"
           Id="Package\CreateReportsinformesdiarios\max-min-avg"
-          TopLeft="68,265" />
+          TopLeft="124,267" />
         <NodeLayout
           Size="120,42"
           Id="Package\CreateReportsinformesdiarios\Multicast"
-          TopLeft="237,152" />
+          TopLeft="218,154" />
         <NodeLayout
           Size="172,42"
           Id="Package\CreateReportsinformesdiarios\ventas_procedencia"
-          TopLeft="377,341" />
+          TopLeft="440,345" />
         <NodeLayout
           Size="110,42"
           Id="Package\CreateReportsinformesdiarios\ventas"
-          TopLeft="408,263" />
+          TopLeft="466,266" />
         <NodeLayout
           Size="106,42"
           Id="Package\CreateReportsinformesdiarios\group"
-          TopLeft="243,265" />
+          TopLeft="299,267" />
         <NodeLayout
           Size="111,42"
           Id="Package\CreateReportsinformesdiarios\Ventas"
-          TopLeft="238,62" />
+          TopLeft="215,22" />
         <EdgeLayout
           Id="Package\CreateReportsinformesdiarios.Paths[Multicast Output 2]"
-          TopLeft="296.5,194">
+          TopLeft="296.666666666667,196">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="55.3333333333334,71"
               Start="0,0"
-              End="0,63.5">
+              End="55.3333333333334,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,24.9605263157895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.9605263157895"
+                    Point2="0,28.9605263157895"
+                    Point3="4,28.9605263157895" />
+                  <mssgle:LineSegment
+                    End="51.3333333333334,28.9605263157895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.3333333333334,28.9605263157895"
+                    Point2="55.3333333333334,28.9605263157895"
+                    Point3="55.3333333333334,32.9605263157895" />
+                  <mssgle:LineSegment
+                    End="55.3333333333334,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CreateReportsinformesdiarios.Paths[Multicast Output 1]"
-          TopLeft="269,194">
+          TopLeft="259.333333333333,196">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-130.5,71"
+              EndConnector="-64.8333333333333,71"
               Start="0,0"
-              End="-130.5,63.5">
+              End="-64.8333333333333,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.695652173913" />
+                    End="0,24.9605263157895" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.695652173913"
-                    Point2="0,24.695652173913"
-                    Point3="-4,24.695652173913" />
+                    Point1="0,24.9605263157895"
+                    Point2="0,28.9605263157895"
+                    Point3="-4,28.9605263157895" />
                   <mssgle:LineSegment
-                    End="-126.5,24.695652173913" />
+                    End="-60.8333333333333,28.9605263157895" />
                   <mssgle:CubicBezierSegment
-                    Point1="-126.5,24.695652173913"
-                    Point2="-130.5,24.695652173913"
-                    Point3="-130.5,28.695652173913" />
+                    Point1="-60.8333333333333,28.9605263157895"
+                    Point2="-64.8333333333333,28.9605263157895"
+                    Point3="-64.8333333333333,32.9605263157895" />
                   <mssgle:LineSegment
-                    End="-130.5,63.5" />
+                    End="-64.8333333333333,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CreateReportsinformesdiarios.Paths[Excel Source Output]"
-          TopLeft="295.25,104">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CreateReportsinformesdiarios.Paths[Aggregate Output 12]"
-          TopLeft="463,305">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CreateReportsinformesdiarios.Paths[Aggregate Output 11]"
-          TopLeft="296.25,307">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CreateReportsinformesdiarios.Paths[Aggregate Output 1]"
-          TopLeft="139.5,307">
+          TopLeft="523.5,308">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4038,45 +4654,151 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\CreateReportsinformesdiarios.Paths[Multicast Output 3]"
-          TopLeft="325,194">
+          Id="Package\CreateReportsinformesdiarios.Paths[Aggregate Output 11]"
+          TopLeft="352.25,309">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138,69"
+              EndConnector="0,36"
               Start="0,0"
-              End="138,61.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20"
-                    Point2="0,24"
-                    Point3="4,24" />
-                  <mssgle:LineSegment
-                    End="134,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="134,24"
-                    Point2="138,24"
-                    Point3="138,28" />
-                  <mssgle:LineSegment
-                    End="138,61.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CreateReportsinformesdiarios.Paths[Aggregate Output 1]"
+          TopLeft="195.5,309">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153,42"
+          Id="Package\CreateReportsinformesdiarios\DataConversion"
+          TopLeft="200,89" />
+        <EdgeLayout
+          Id="Package\CreateReportsinformesdiarios.Paths[Excel Source Output]"
+          TopLeft="273.5,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CreateReportsinformesdiarios.Paths[Data Conversion Output]"
+          TopLeft="277.25,131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="127,42"
+          Id="Package\CreateReportsinformesdiarios\VentasCsv"
+          TopLeft="459,21" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\CreateReportsinformesdiarios\DataConversionToExcel"
+          TopLeft="425,90" />
+        <EdgeLayout
+          Id="Package\CreateReportsinformesdiarios.Paths[Flat File Source Output]"
+          TopLeft="521,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CreateReportsinformesdiarios.Paths[Data Conversion Output1]"
+          TopLeft="520.25,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,134"
+              Start="0,0"
+              End="0,126.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,126.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4236,59 +4958,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="177,42"
           Id="Package\SpecialReports\ByOwnwerCommDeli"
-          TopLeft="309,226" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\SpecialReports\Multicast"
-          TopLeft="209,124" />
+          TopLeft="306,294" />
         <NodeLayout
           Size="138,42"
           Id="Package\SpecialReports\ByCommune"
-          TopLeft="100,226" />
+          TopLeft="93,293" />
         <NodeLayout
           Size="162,42"
           Id="Package\SpecialReports\ExcelByCommune"
           TopLeft="87,399" />
-        <NodeLayout
-          Size="117,42"
-          Id="Package\SpecialReports\AllDatas"
-          TopLeft="210,56" />
-        <EdgeLayout
-          Id="Package\SpecialReports.Paths[Excel Source Output]"
-          TopLeft="268.75,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26"
-              Start="0,0"
-              End="0,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\SpecialReports.Paths[Aggregate Output 11]"
-          TopLeft="395.5,268">
+          TopLeft="394,336">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,133"
+              EndConnector="0,65"
               Start="0,0"
-              End="0,125.5">
+              End="0,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,125.5" />
+                    End="0,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4299,18 +4991,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SpecialReports.Paths[Aggregate Output 1]"
-          TopLeft="168.5,268">
+          TopLeft="165,335">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,131"
+              EndConnector="0,64"
               Start="0,0"
-              End="0,123.5">
+              End="0,56.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,123.5" />
+                    End="0,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4319,32 +5011,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="127,42"
+          Id="Package\SpecialReports\VentasCsv"
+          TopLeft="213,20" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\SpecialReports\DataConversionToExcel"
+          TopLeft="188,102" />
         <EdgeLayout
-          Id="Package\SpecialReports.Paths[Multicast Output 2]"
-          TopLeft="287.666666666667,166">
+          Id="Package\SpecialReports.Paths[Flat File Source Output]"
+          TopLeft="279.5,62">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.833333333333,60"
+              EndConnector="0,40"
               Start="0,0"
-              End="109.833333333333,52.5">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4736842105263" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.4736842105263"
-                    Point2="0,24.4736842105263"
-                    Point3="4,24.4736842105263" />
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,42"
+          Id="Package\SpecialReports\Multicast"
+          TopLeft="224,197" />
+        <EdgeLayout
+          Id="Package\SpecialReports.Paths[Data Conversion Output]"
+          TopLeft="283.25,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="105.833333333333,24.4736842105263" />
-                  <mssgle:CubicBezierSegment
-                    Point1="105.833333333333,24.4736842105263"
-                    Point2="109.833333333333,24.4736842105263"
-                    Point3="109.833333333333,28.4736842105263" />
-                  <mssgle:LineSegment
-                    End="109.833333333333,52.5" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4355,30 +5069,64 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SpecialReports.Paths[Multicast Output 1]"
-          TopLeft="250.333333333333,166">
+          TopLeft="265.333333333333,239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-81.3333333333333,60"
+              EndConnector="-103.333333333333,54"
               Start="0,0"
-              End="-81.3333333333333,52.5">
+              End="-103.333333333333,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4736842105263" />
+                    End="0,18.0263157894737" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.4736842105263"
-                    Point2="0,24.4736842105263"
-                    Point3="-4,24.4736842105263" />
+                    Point1="0,18.0263157894737"
+                    Point2="0,22.0263157894737"
+                    Point3="-4,22.0263157894737" />
                   <mssgle:LineSegment
-                    End="-77.3333333333333,24.4736842105263" />
+                    End="-99.3333333333333,22.0263157894737" />
                   <mssgle:CubicBezierSegment
-                    Point1="-77.3333333333333,24.4736842105263"
-                    Point2="-81.3333333333333,24.4736842105263"
-                    Point3="-81.3333333333333,28.4736842105263" />
+                    Point1="-99.3333333333333,22.0263157894737"
+                    Point2="-103.333333333333,22.0263157894737"
+                    Point3="-103.333333333333,26.0263157894737" />
                   <mssgle:LineSegment
-                    End="-81.3333333333333,52.5" />
+                    End="-103.333333333333,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SpecialReports.Paths[Multicast Output 2]"
+          TopLeft="302.666666666667,239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.8333333333334,55"
+              Start="0,0"
+              End="91.8333333333334,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4342105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4342105263158"
+                    Point2="0,22.4342105263158"
+                    Point3="4,22.4342105263158" />
+                  <mssgle:LineSegment
+                    End="87.8333333333334,22.4342105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="87.8333333333334,22.4342105263158"
+                    Point2="91.8333333333334,22.4342105263158"
+                    Point3="91.8333333333334,26.4342105263158" />
+                  <mssgle:LineSegment
+                    End="91.8333333333334,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4405,19 +5153,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SpecialReports\ExcelByCommune">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SpecialReports\AllDatas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
